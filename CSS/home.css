@@ -1,0 +1,562 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    position: absolute;
+    padding-top: 1vh;
+    width: 100%;
+    height: 7.5vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    backdrop-filter: opacity(50%);
+    z-index: 10;
+}
+
+.headerLeft {
+    float: left;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo {
+    margin: 0 2.5vh 0 2.5vh;
+    font-family: 'Varela Round', sans-serif;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px 15px 10px 15px;
+    font-size: x-large;
+    transform: scale(100%);
+    transition: all ease-in-out 0.5s;
+}
+
+.logo:hover {
+    transform: scale(104%);
+}
+
+.headerRight {
+    float: right;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.button {
+    font-family: 'Varela Round', sans-serif;
+    font-size: x-large;
+    text-decoration: none;
+    color: black;
+    margin: 0 2.5vh 0 2.5vh;
+}
+
+.login {
+    font-family: 'Varela Round', sans-serif;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    margin: 0 2.5vh 0 2.5vh;
+    border-radius: 30px;
+    border: 2px solid black;
+    padding: 10px 15px 10px 15px;
+    box-shadow: 0 0 0 0 rgb(0, 0, 0);
+    font-size: x-large;
+    transform: scale(100%);
+    transition: background-color ease 0.5s;
+    transition: transform ease 0.5s;
+    transition: box-shadow ease 0.5s;
+}
+
+.login:hover {
+    transform: scale(104%);
+    box-shadow: 5px 5px 0 0 rgb(0, 0, 0);
+    background-color: rgb(200, 0, 200);
+}
+
+.login:active {
+    transform: scale(96%);
+    box-shadow: 0 0 0 0 rgb(0, 0, 0);
+    background-color: rgb(200, 0, 200);
+    transition: box-shadow ease 0s;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.pPart {
+    overflow: hidden;
+    background-color: rgb(255, 0, 255);
+    height: 100vh;
+    text-align: center;
+}
+
+.product {
+    position: absolute;
+    font-family: 'Varela Round', sans-serif;
+    font-size: xx-large;
+    width: 50%;
+    height: 100%;
+    left: 20vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product h1 {
+    z-index: 1;
+    margin: 0 0 0 20px;
+    text-align: start;
+}
+
+.product p {
+    z-index: 4;
+    margin: 20px 0 20px 0;
+    padding-left: 20px;
+    left: 0;
+}
+
+.product button {
+    z-index: 4;
+    cursor: pointer;
+    overflow: hidden;
+    color: white;
+    width: 25%;
+    margin: 0 2.5vh 0 75%;
+    border-radius: 30px;
+    border: 2px solid black;
+    background-color: black;
+    padding: 10px 15px 10px 15px;
+    font-size: x-large;
+    transform: scale(100%);
+    transition: transform ease-in-out 0.25s;
+}
+
+.product button:hover {
+    transform: scale(104%);
+}
+
+.product button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    Left: 100%;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(45deg, transparent, #fff, transparent);
+    transition: 0.25s;
+}
+
+.product button:hover::before {
+    left: -100%;
+}
+
+#canvas {
+    z-index: 3;
+    position: absolute;
+    overflow: hidden;
+    width: 75%;
+    right: 0;
+    animation: slideObj 3s ease-in-out;
+}
+
+@keyframes slideObj {
+    0% {
+        transform: translateX(75%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.waveTop {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    filter: drop-shadow(0 0 5px);
+    top: 0;
+    left: 0;
+    align-items: flex-end;
+    width: 140%;
+    animation: slideTop ease-in-out 30s infinite;
+}
+
+@keyframes slideTop {
+    0% {
+        left: -40%;
+    }
+    50% {
+        left: 0;
+    }
+    100% {
+        left: -40%;
+    }
+}
+
+.rectangle {
+    z-index: 1;
+    width: 100%;
+    height: 30vh;
+    background-color: #e300e3;
+}
+
+.waveMiddle {
+    position: absolute;
+    z-index: 0;
+    overflow: hidden;
+    /*filter: drop-shadow(0 0 5px);*/
+    top: 30vh;
+    left: 0;
+    align-items: flex-end;
+    width: 140%;
+    animation: slideMiddle ease-in-out 40s infinite;
+}
+
+@keyframes slideMiddle {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: -40%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.waveBottom {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    /*filter: drop-shadow(0 -7px 2px rgba(0, 0, 0, 0.4));*/
+    bottom: 0;
+    left: 0;
+    align-items: flex-start;
+    width: 140%;
+    animation: slideBottom ease-in-out 30s infinite;
+}
+
+@keyframes slideBottom {
+    0% {
+        left: -40%;
+    }
+    50% {
+        left: 0;
+    }
+    100% {
+        left: -40%;
+    }
+}
+
+.dPart {
+    background-color: #fff;
+    height: 100vh;
+    text-align: center;
+}
+
+.topTriangle {
+    position: absolute;
+    width: 100%;
+    top: 100vh;
+    left: 0;
+    filter: drop-shadow(0px 11px 5px rgba(0, 0, 0, 0.5));
+}
+
+.bottomTriangle {
+    position: absolute;
+    width: 100%;
+    bottom: -100vh;
+    left: 0;
+    filter: drop-shadow(0px -8px 4px rgba(0, 0, 0, 0.5));
+}
+
+.details {
+    width: 100%;
+    height: 100%;
+}
+
+.firstDetails {
+    position: absolute;
+    font-family: 'Varela Round', sans-serif;
+    font-size: x-large;
+    width: 25%;
+    height: 40%;
+    margin-left: 6.25%;
+    margin-top: 22.5vh;
+}
+
+.secondDetails {
+    position: absolute;
+    font-family: 'Varela Round', sans-serif;
+    font-size: x-large;
+    width: 25%;
+    height: 40%;
+    margin-left: 37.5%;
+    margin-top: 32.5vh;
+}
+
+.thirdDetails {
+    position: absolute;
+    font-family: 'Varela Round', sans-serif;
+    font-size: x-large;
+    width: 25%;
+    height: 40%;
+    margin-left: 68.75%;
+    margin-top: 42.5vh;
+}
+
+.reveal {
+    position: absolute;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all ease 3s;
+}
+  
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.ePart {
+    background-color: #ff00ff;
+    height: 100vh;
+    text-align: center;
+}
+
+.reviews {
+    position: relative;
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: larger;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.top i {
+    margin: 10px;
+    width: 10%;
+}
+
+.top h3 {
+    right: 0;
+    margin: 10px;
+    width: 60%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.reviews p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 10px;
+    width: 25vh;
+    height: 38vh;
+    margin: 20px;
+    transform: scale(100%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    transition: transform ease-in-out 0.25s;
+}
+
+.stars {
+    width: 100%;
+}
+
+.fa-star, .fa-star-half {
+    color: rgb(255, 230, 0);
+    filter: drop-shadow(0 0 2px black);
+}
+
+.review:hover {
+    transform: scale(105%);
+}
+
+.formReview {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formAvis {
+    height: 100%;
+    width: 50%;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.formAvis .pseudoDiv {
+    position: relative;
+}
+
+.formAvis #pseudo {
+    grid-area: 1 / 1 / 2 / 2;
+    border-radius: 2.5px;
+    border: 0px;
+    font-size: x-large;
+    margin: 10px;
+}
+
+.formAvis #pseudo:focus-visible {
+    outline: none;
+}
+
+
+.formAvis #avis {
+    grid-area: 1 / 2 / 6 / 4;
+    border-radius: 2.5px;
+    border: 0px;
+    resize: none;
+    font-size: xx-large;
+    margin: 10px;
+}
+
+.formAvis #avis:focus-visible {
+    outline: none;
+}
+
+.formAvis #stars {
+    grid-area: 2 / 1 / 3 / 2;
+    margin: 10px;
+}
+
+.formAvis #charNumName {
+    position: absolute;
+    user-select: none;
+    color: gray;
+    margin: 0 12.5px 20px 0;
+    bottom: 0;
+    right: 0;
+}
+
+.formAvis #charNumAvis {
+    position: absolute;
+    user-select: none;
+    color: gray;
+    margin: 10px;
+    bottom: 0;
+    right: 0;
+}
+
+.formAvis #submitButton {
+    grid-area: 5 / 1 / 6 / 2;
+    border: 0px;
+    margin: 10px;
+    font-size: larger;
+    cursor: pointer;
+    background-color: #FFF;
+    transition: all ease-in-out 0.5s, border ease-in-out 0.25s 0.25s;
+}
+
+.formAvis #submitButton:hover {
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: #e300e3;
+}
+
+.circles {
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    bottom: -200vh;
+    left: 0;
+}
+
+.circle1 {
+    bottom: -187vh;
+    left: 15vh;
+    width: 15vh;
+    height: 15vh;
+    position: absolute;
+    background-color: #e300e3;
+    border-radius: 50%;
+}
+
+.circle2 {
+    bottom: -197vh;
+    left: 65vh;
+    width: 20vh;
+    height: 20vh;
+    position: absolute;
+    background-color: #990099;
+    border-radius: 50%;
+}
+
+.circle3 {
+    bottom: -180vh;
+    left: 105vh;
+    width: 10vh;
+    height: 10vh;
+    position: absolute;
+    background-color: #e300e3;
+    border-radius: 50%;
+}
+
+.circle4 {
+    bottom: -192vh;
+    left: 145vh;
+    width: 15vh;
+    height: 15vh;
+    position: absolute;
+    background-color: #990099;
+    border-radius: 50%;
+}
+
+.footer {
+    position: absolute;
+    display: flex;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    width: 100%;
+    height: 20vh;
+    bottom: -200vh;
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.footer h1 {
+    font-size: xx-large;
+    font-family: 'Varela Round', sans-serif;
+}

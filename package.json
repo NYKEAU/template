@@ -1,0 +1,11 @@
+{
+  "scripts": {
+	"build": "template build --output public"
+  }
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "locomotive-scroll": "^4.1.4",
+    "raty-js": "^3.1.1",
+    "tiny-slider": "^2.9.4"
+  }
+}
