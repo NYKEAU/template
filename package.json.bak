@@ -1,4 +1,7 @@
 {
+  "scripts": {
+	"build": "npm build"
+  },
   "dependencies": {
     "jquery": "^3.6.0",
     "locomotive-scroll": "^4.1.4",
